@@ -132,8 +132,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 358427084}
-  - component: {fileID: 358427083}
   - component: {fileID: 358427082}
+  - component: {fileID: 358427083}
+  - component: {fileID: 358427085}
+  - component: {fileID: 358427087}
+  - component: {fileID: 358427086}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,6 +210,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30.21, y: 0, z: 0}
+--- !u!114 &358427085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358427081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1714d34aefe99408aeb976be46d322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selector: {fileID: 358427086}
+--- !u!114 &358427086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358427081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff1eb5e431ce284681c60d9f41de2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayDistance: 50
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &358427087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358427081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16aaf5cbdc6a457449356f0c2b3e56b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuScheme: {fileID: 11400000, guid: c4945bd31276a05408bbc68060e6c20e, type: 2}
 --- !u!1 &498462144
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1061102745}
   - component: {fileID: 1061102746}
+  - component: {fileID: 1061102748}
   m_Layer: 0
   m_Name: Selector
   m_TagString: Untagged
@@ -495,6 +541,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1714d34aefe99408aeb976be46d322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selector: {fileID: 1061102748}
+--- !u!114 &1061102748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061102744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff1eb5e431ce284681c60d9f41de2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayDistance: 0
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &1158526444
 GameObject:
   m_ObjectHideFlags: 0

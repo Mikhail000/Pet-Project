@@ -1,14 +1,15 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 [CreateAssetMenu(menuName = "SelectionSystem/Commands/SelectCommand")]
 public class SelectCommand : BaseCommand
 {
-    public SelectCommand()
+
+    public override void Execute(InputAction action, Selector selector)
     {
-        
-    }
-    
-    public override void Execute()
-    {
-        
+        if (action.IsPressed())
+        {
+            selector.SelectObject();
+        }
     }
 }

@@ -15,8 +15,9 @@ public class InputHandler : MonoBehaviour
     private List<ActionCommandPair> _actionCommandList = new List<ActionCommandPair>();
     public Dictionary<InputAction, BaseCommand> bindActions = new Dictionary<InputAction, BaseCommand>();
     public Dictionary<BaseCommand, InputAction> reversedBindActions = new Dictionary<BaseCommand, InputAction>();
-    
-    [SerializeField]
+
+    [SerializeField] private Selector selector;
+    private Camera _camera;
 
     #region SIngleton
 
@@ -39,12 +40,15 @@ public class InputHandler : MonoBehaviour
 
     private void Start()
     {
-        
+        _camera = GetComponent<Camera>();
     }
 
     private void Update()
     {
-        throw new NotImplementedException();
+        foreach (var action in bindActions)
+        {
+            action.Value.Execute(action.Key, selector);
+        }
     }
 
     private void OnEnable()
@@ -54,10 +58,8 @@ public class InputHandler : MonoBehaviour
 
     private void OnDisable()
     {
-        foreach (var action in bindActions)
-        {
+        foreach (var action in bindActions) 
             action.Key.Disable();
-        }
     }
 
     public void UpdateActionsCommandsBindings()
@@ -70,5 +72,10 @@ public class InputHandler : MonoBehaviour
             reversedBindActions[acp.val] = acp.key;
             acp.key.Enable();
         }
+    }
+
+    public void UpdateActionsCommandsList(List<ActionCommandPair> aList)
+    {
+        _actionCommandList = aList;
     }
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   - key:
       m_Name: Key
       m_Type: 0
-      m_ExpectedControlType: 
+      m_ExpectedControlType: Button
       m_Id: 59f6ee05-1462-48bf-96c7-c7741e3b8811
       m_Processors: 
       m_Interactions: 
