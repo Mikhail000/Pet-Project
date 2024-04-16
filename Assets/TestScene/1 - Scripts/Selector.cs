@@ -31,9 +31,7 @@ public class Selector : MonoBehaviour
 
     public void StartSelection()
     {
-        // сохраняем координаты мыши
         _startPos = Input.mousePosition;
-        // обрабатываем их в мировом пространстве
         selectionRect = new Rect();
     }
 
@@ -48,23 +46,12 @@ public class Selector : MonoBehaviour
         _startPos = _endPos = Vector2.zero;
         DrawRectangle();
     }
+
+    private void ApplySelection()
+    {
+        
+    }
     
-    public bool IsOtherSelection()
-    {
-        if (selectedObjects != null)
-        {
-            isOtherSelections = true;
-        }
-        return false;   
-    }
-    public void DeselectAll()
-    {
-        
-    }
-    public void ConfirmSelection()
-    {
-        
-    }
     private void DrawRectangle()
     {
         Vector2 boxStart = _startPos;
@@ -76,6 +63,15 @@ public class Selector : MonoBehaviour
         float sizeY = Math.Abs(boxStart.y - _endPos.y);
 
         selectionImage.sizeDelta = new Vector2(sizeX, sizeY);
+
+        RaycastHit[] hits = Physics.BoxCastAll(Camera.main.ScreenToViewportPoint(selectionRect.center),
+            new Vector2(sizeX, sizeY),
+            transform.forward, Quaternion.identity, Mathf.Infinity, interactableLayer);
+        
+        if (hits != null)
+        {
+            Debug.Log(hits.Length);
+        }
     }
     
     

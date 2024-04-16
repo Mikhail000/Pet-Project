@@ -208,7 +208,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 30.21, y: 0, z: 0}
 --- !u!114 &358427085
 MonoBehaviour:
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectionImage: {fileID: 1936164841}
-  rayDistance: 50
+  rayDistance: 150
   interactableLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -350,7 +350,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &498462149
 MonoBehaviour:
@@ -462,7 +462,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &779713908
 GameObject:
@@ -496,7 +496,7 @@ Transform:
   - {fileID: 1576724309}
   - {fileID: 1959755513}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1061102744
 GameObject:
@@ -527,7 +527,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1158526444
 GameObject:
@@ -734,7 +734,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1425439487
 GameObject:
@@ -801,7 +801,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1483514780
 GameObject:
@@ -900,7 +900,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1483514785
 MonoBehaviour:
@@ -1165,7 +1165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6038879050307625136, guid: 47fb83f3427bbf2469e80f759b39274a, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6038879050307625136, guid: 47fb83f3427bbf2469e80f759b39274a, type: 3}
       propertyPath: m_AnchorMax.x
