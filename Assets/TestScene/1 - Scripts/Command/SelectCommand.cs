@@ -1,10 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu(menuName = "SelectionSystem/Commands/SelectCommand")]
+[CreateAssetMenu(menuName = "SelectionSystem/Commands/SelectiCommand")]
 public class SelectCommand : BaseCommand
 {
-
     public override void Execute(InputAction action, Selector selector)
     {
         if (action.WasPressedThisFrame())
@@ -12,14 +11,9 @@ public class SelectCommand : BaseCommand
             selector.StartSelection();
         }
 
-        if (action.IsPressed())
-        {
-            selector.ContinueSelection();
-        }
-
         if (action.WasReleasedThisFrame())
         {
-            selector.ResetSelection();
+            selector.EndSelection();
         }
     }
 }

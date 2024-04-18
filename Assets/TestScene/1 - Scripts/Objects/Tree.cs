@@ -1,19 +1,38 @@
 using System;
 using UnityEngine;
 
-public class Tree : InteractiveObject
+public class Tree : MonoBehaviour, ISelectable
 {
-    [SerializeField] private Material nativeMaterial;
-    [SerializeField] private Material hightLight;
+    public bool Selected { get; private set; }
+    public bool Hovering { get; private set; }
+    public Action OnSelect = delegate { };
+    public Action OnDeselect = delegate { };
+    public Action OnHoverEnter = delegate { };
+    public Action OnHoverExit = delegate { };
     
-
-    public override void Select()
+    public void Select()
     {
-        GetComponent<MeshRenderer>().material = hightLight;
+        if (Selected) return;
+        Selected = true;
+        OnSelect();
     }
 
-    public override void Deselect()
+    public void Deselect()
     {
-        GetComponent<MeshRenderer>().material = nativeMaterial;
+        if (Selected == false) return;
+        Selected = false;
+        OnDeselect();
+    }
+
+    public void HoverEnter()
+    {
+        Hovering = true;
+        OnHoverEnter();
+    }
+
+    public void HoverExit()
+    {
+        Hovering = false;
+        OnHoverExit();
     }
 }
