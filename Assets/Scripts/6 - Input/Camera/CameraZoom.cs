@@ -28,7 +28,7 @@ public class CameraZoom : MonoBehaviour
     private float FieldOfView(float interpolation) => Mathf.Lerp(fovMin, fovMax, FovCurve.Evaluate(interpolation));
     private float Height(float interpolation) => Mathf.Lerp(heightMin, heightMax, heightCurve.Evaluate(interpolation));
 
-    private static Camera Camera => SelectorData.Instance.Input.Provider.Camera;
+    private static Camera Camera => GameData.Instance.Input.Provider.Camera;
 
     private void Update()
     {

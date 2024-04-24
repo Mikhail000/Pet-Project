@@ -18,9 +18,9 @@ public class CursorLock : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || SelectorData.Instance.Input.Provider.PanCamera)
+        if (Input.GetKeyDown(KeyCode.Escape) || GameData.Instance.Input.Provider.PanCamera)
             Cursor.lockState = CursorLockMode.None;
-        else if (Input.GetMouseButtonDown(0) || SelectorData.Instance.Input.Provider.PanCameraUp)
+        else if (Input.GetMouseButtonDown(0) || GameData.Instance.Input.Provider.PanCameraUp)
             Cursor.lockState = CursorLockMode.Confined;
 
         if (_lockedText)

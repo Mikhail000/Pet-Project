@@ -14,7 +14,7 @@ public class Selector : MonoBehaviour, IDisposable
     private static Vector2 _endPosition => Input.mousePosition;
     private bool _dragSelection => Vector2.Distance(_startPosition, _endPosition) > 1;
     
-    private static IInputProvider InputProvider => SelectorData.Instance.Input.Provider;
+    private static IInputProvider InputProvider => GameData.Instance.Input.Provider;
 
     private ISelectable _hoverSelection = default;
     private readonly List<ISelectable> Selection = new();

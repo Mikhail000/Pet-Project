@@ -10,25 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28528f7d687c74e4e93c6c5346491ee4, type: 3}
-  m_Name: SelectorData
+  m_Name: GameData
   m_EditorClassIdentifier: 
   <Physics>k__BackingField:
     <UnitLayer>k__BackingField:
       serializedVersion: 2
-      m_Bits: 128
+      m_Bits: 0
     <GroundLayer>k__BackingField:
       serializedVersion: 2
-      m_Bits: 64
+      m_Bits: 0
   <Input>k__BackingField:
     Provider:
-      rid: 3253431221930688521
+      rid: 3253431270223118348
   <Color>k__BackingField:
     <SelectionColor>k__BackingField: {r: 0.23921569, g: 0.58431375, b: 1, a: 0}
     <HoverColor>k__BackingField: {r: 0.4745098, g: 0.7137255, b: 1, a: 0}
+  <ObjectsCanvas>k__BackingField:
+    <WorldCanvas>k__BackingField: {fileID: 2859944197919649498, guid: 2efad9fe9d7c25b469156d57fd12ef8a, type: 3}
   references:
     version: 2
     RefIds:
-    - rid: 3253431221930688521
+    - rid: 3253431270223118348
       type: {class: PCInput, ns: , asm: Assembly-CSharp}
       data:
         _panCamera: 2

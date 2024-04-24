@@ -3,8 +3,8 @@ using UnityEngine;
 public class CameraRotate : MonoBehaviour
 {
     [SerializeField] private float _sensitivity = 200f;
-    private static bool RotationMod => SelectorData.Instance.Input.Provider.CameraRotationModifier;
-    private static bool RotationModUp => SelectorData.Instance.Input.Provider.CameraRotationModifierUp;
+    private static bool RotationMod => GameData.Instance.Input.Provider.CameraRotationModifier;
+    private static bool RotationModUp => GameData.Instance.Input.Provider.CameraRotationModifierUp;
 
     private void Update()
     {

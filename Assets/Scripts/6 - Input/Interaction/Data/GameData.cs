@@ -1,22 +1,23 @@
 using UnityEngine;
 
 [CreateAssetMenu]
-public class SelectorData : ScriptableObject
+public class GameData : ScriptableObject
 {
     [field: SerializeField] public PhysicsSettings Physics { get; private set; } = default;
     [field: SerializeField] public InputSettings Input { get; private set; } = default;
 
     [field: SerializeField] public ColorSettings Color { get; private set; } = default;
+    
+    [field: SerializeField] public WorldUICanvasSettings ObjectsCanvas { get; private set; } = default;
 
-    private static SelectorData _instance = default;
+    private static GameData _instance = default;
 
-    public static SelectorData Instance
+    public static GameData Instance
     {
         get
         {
             if (_instance == null)
-                _instance = Resources.Load<SelectorData>(nameof(SelectorData));
-                //_instance = Resources.Load<SelectorData>("Assets/TestScene/5-ScriptableObjects/SelectorData.asset");
+                _instance = Resources.Load<GameData>(nameof(GameData));
             return _instance;
         }
     }

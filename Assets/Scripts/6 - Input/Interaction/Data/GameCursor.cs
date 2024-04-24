@@ -4,10 +4,10 @@ public class GameCursor
 {
     public static bool CursorVisible => Cursor.visible;
     public static Vector3 NormalizedPosition => new(Mathf.Clamp01(UnityEngine.Input.mousePosition.x / Screen.width), Mathf.Clamp01(UnityEngine.Input.mousePosition.y / Screen.height), 0);
-    private static Camera Camera => SelectorData.Instance.Input.Provider.Camera;
-    private static Ray CursorRay => SelectorData.Instance.Input.Provider.Camera.ViewportPointToRay(NormalizedPosition);
-    private static LayerMask GroundLayer => SelectorData.Instance.Physics.GroundLayer;
-    private static LayerMask UnitLayer => SelectorData.Instance.Physics.UnitLayer;
+    private static Camera Camera => GameData.Instance.Input.Provider.Camera;
+    private static Ray CursorRay => GameData.Instance.Input.Provider.Camera.ViewportPointToRay(NormalizedPosition);
+    private static LayerMask GroundLayer => GameData.Instance.Physics.GroundLayer;
+    private static LayerMask UnitLayer => GameData.Instance.Physics.UnitLayer;
     
     public static bool TryGetSelectable(out ISelectable selectable)
     {
