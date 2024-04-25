@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c36d2e8a41d64057a4720940141c6147, type: 3}
-  m_Name: SelectionRingPool
+  m_Name: BarrackMenu
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7547969036256646507, guid: 9160894897d8ee54b9a2487286458490, type: 3}
-  size: 10
+  _prefab: {fileID: 172498063594174344, guid: 473c0c17249f7d1478bf18acbc9049ec, type: 3}
+  size: 100
   maxSize: 100
-  margin: {x: 0, y: 0, z: 0}
+  margin: {x: 0, y: -10, z: 0}

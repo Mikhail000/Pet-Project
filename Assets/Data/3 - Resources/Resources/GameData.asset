@@ -15,10 +15,10 @@ MonoBehaviour:
   <Physics>k__BackingField:
     <UnitLayer>k__BackingField:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 128
     <GroundLayer>k__BackingField:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 64
   <Input>k__BackingField:
     Provider:
       rid: 3253431270223118348

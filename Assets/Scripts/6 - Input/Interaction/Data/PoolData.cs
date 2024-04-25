@@ -5,8 +5,9 @@ using UnityEngine.Pool;
 public class PoolData : ScriptableObject
 {
     [SerializeField] private GameObject _prefab = default;
-    [SerializeField] private int _size = default;
-    [SerializeField] private int _maxSize = default;
+    [SerializeField] private int size = default;
+    [SerializeField] private int maxSize = default;
+    [SerializeField] private Vector3 margin = default;
         
     public ObjectPool<GameObject> Pool
     {
@@ -23,7 +24,7 @@ public class PoolData : ScriptableObject
 
     private void Build()
     {
-        _pool = new ObjectPool<GameObject>(CreateInstance, Get, Release, Destroy, true, _size, _maxSize);
+        _pool = new ObjectPool<GameObject>(CreateInstance, Get, Release, Destroy, true, size, maxSize);
         ValidateContainer();
     }
 

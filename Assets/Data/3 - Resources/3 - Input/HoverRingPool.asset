@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: HoverRingPool
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7547969036256646507, guid: 5a25395f5dc31b7478ab7287fbe1360a, type: 3}
-  _size: 10
-  _maxSize: 100
+  size: 10
+  maxSize: 100
+  margin: {x: 0, y: 0, z: 0}
