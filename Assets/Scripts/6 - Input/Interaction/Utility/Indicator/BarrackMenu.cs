@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Vector3 = System.Numerics.Vector3;
 
 public class BarrackMenu : SelectionListener
 {
-    [SerializeField] private PoolData _selectionPool = default;
+    [SerializeField] private PoolData selectionPool = default;
     
     private GameObject _selection = default;
     
@@ -12,21 +11,20 @@ public class BarrackMenu : SelectionListener
     {
         if (_selection != null) return;
         //if (_hover) Unload(_hoverPool, ref _hover);
-        _selection = Load(_selectionPool);
+        _selection = Load(selectionPool);
     }
 
     protected override void OnDeselect()
     {
         if (_selection == null) return;
-        Unload(_selectionPool, ref _selection);
+        Unload(selectionPool, ref _selection);
     }
 
     private GameObject Load(PoolData pool)
     {
         var instance = pool.Pool.Get();
         instance.transform.SetParent(transform);
-        instance.transform.localPosition = default;
-        instance.transform.localScale = Vector3.one;
+        instance.transform.localPosition = new UnityEngine.Vector3(0, 2,0);
         instance.gameObject.SetActive(true);
         return instance;
     }

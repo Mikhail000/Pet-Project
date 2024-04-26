@@ -7,8 +7,6 @@ public class GameData : ScriptableObject
     [field: SerializeField] public InputSettings Input { get; private set; } = default;
 
     [field: SerializeField] public ColorSettings Color { get; private set; } = default;
-    
-    [field: SerializeField] public WorldUICanvasSettings ObjectsCanvas { get; private set; } = default;
 
     private static GameData _instance = default;
 

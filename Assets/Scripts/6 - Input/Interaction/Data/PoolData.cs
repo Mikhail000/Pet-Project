@@ -7,7 +7,6 @@ public class PoolData : ScriptableObject
     [SerializeField] private GameObject _prefab = default;
     [SerializeField] private int size = default;
     [SerializeField] private int maxSize = default;
-    [SerializeField] private Vector3 margin = default;
         
     public ObjectPool<GameObject> Pool
     {
