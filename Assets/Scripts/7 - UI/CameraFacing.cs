@@ -1,22 +1,24 @@
+using System;
 using UnityEngine;
 
 public class CameraFacing : MonoBehaviour
 {
-    private static Camera Camera => GameData.Instance.Input.Provider.Camera;
-    private Transform _cameraAnchor;
-    private Transform _localTransform;
-
+    private Vector3 transEul;
     private void Start()
     {
-        _localTransform = GetComponent<RectTransform>();
-        _cameraAnchor = Camera.transform.parent.GetComponentInParent<Transform>();
+        transEul = GetComponent<Transform>().eulerAngles;
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (_cameraAnchor)
-        {
-            _localTransform.LookAt(2 * _localTransform.position - _cameraAnchor.position);
-        }
+        GlobalEventBus.CameraBus.Subscribe<OnCameraMove>(CameraTranslate);
+    }
+    
+
+    private void CameraTranslate(OnCameraMove signal)
+    {
+        Vector3 directionToTarget = signal.Position - transform.position;
+        
+        transform.rotation = Quaternion.LookRotation(new Vector3(-directionToTarget.x, directionToTarget.y, transform.position.z), Vector3.up);
     }
 }

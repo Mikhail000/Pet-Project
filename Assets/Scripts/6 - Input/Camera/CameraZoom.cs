@@ -43,12 +43,14 @@ public class CameraZoom : MonoBehaviour
         var rotation = _anchor.eulerAngles;
         rotation.x = RotX(_zoomProgress);
         _anchor.eulerAngles = rotation;
-
+        
         var position = Camera.transform.localPosition;
         position.z = Distance(_zoomProgress);
         position.y = Height(_zoomProgress);
         Camera.transform.localPosition = position;
 
         Camera.fieldOfView = FieldOfView(_zoomProgress);
+        
+        GlobalEventBus.CameraBus.Invoke(new OnCameraZoom(_anchor.eulerAngles));
     }
 }
