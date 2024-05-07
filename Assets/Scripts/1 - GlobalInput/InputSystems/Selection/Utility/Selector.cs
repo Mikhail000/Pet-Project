@@ -155,7 +155,8 @@ namespace InputSystem
             void Deselect()
             {
                 if (Selection.Contains(selectable) is false) return;
-                selectable.Deselect();
+                separator.Deselect(selectable);
+                //selectable.Deselect();
                 Selection.Remove(selectable);
             }
         }
@@ -180,6 +181,7 @@ namespace InputSystem
         {
             Selection.ForEach(selectable => selectable.Deselect());
             Selection.Clear();
+            separator.ClearSelection();
         }
 
         public void Dispose()

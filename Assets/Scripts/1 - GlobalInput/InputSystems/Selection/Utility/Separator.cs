@@ -3,16 +3,18 @@ using System.Linq;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
+//<summary>
+// Как класс должен работать, принимает объект, узнает тип
+// Если первый IUnit, выбираем только объекты IUnit.
+// Если первый IBulding, то проверяем нет ли больше объектов IUnit.
+// Если есть - выберим их.
+
 public class Separator : MonoBehaviour 
 {
     private List<ISelectionReceiver> _list = new List<ISelectionReceiver>();
     
     public void ProcessSelectedObjects(ISelectionReceiver selectedObject)
     {
-        if (selectedObject.Equals(typeof(IUnit)))
-        {
-            Debug.Log("isUnitSelected");
-        }
         // Проверяем, были ли уже выделены объекты
         bool anySelected = _list.Any();
         
@@ -44,5 +46,16 @@ public class Separator : MonoBehaviour
         // Выводим типы выделенных объектов
         
         _list.ForEach(e => Debug.Log(e.GetType().ToString()));
+    }
+
+    public void ClearSelection()
+    {
+        _list.Clear();
+    }
+    
+    public void Deselect(ISelectionReceiver selectedObject)
+    {
+        selectedObject.Deselect();
+        _list.Remove(selectedObject);
     }
 }
