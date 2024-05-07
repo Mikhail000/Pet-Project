@@ -3,5 +3,5 @@ using UnityEngine;
 
 public static class SelectionList
 {
-    public static List<ISelectable> selection = new List<ISelectable>();
+    public static List<ISelectionReceiver> selection = new List<ISelectionReceiver>();
 }

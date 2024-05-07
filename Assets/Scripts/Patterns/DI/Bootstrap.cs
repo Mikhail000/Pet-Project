@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class Bootstrap : MonoBehaviour
 {
-    [SerializeField] private World world;
-    [SerializeField] private InputHandler inputHandler;
+    [SerializeField] private GameObject GUI;
+    [SerializeField] private GameObject world;
+    [SerializeField] private GameObject InputHandler;
+    
     private void Awake()
     {
-        
+        Instantiate(GUI);
+        Instantiate(InputHandler);
+        Instantiate(world);
     }
 }

@@ -2,40 +2,32 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Barrack : MonoBehaviour, ISelectable
+public class Barrack : SelectionReceiver<IBuilding>
 {
     [SerializeField] private GameObject healthBar;
     [SerializeField] private Canvas canvas;
-    
-    public bool Selected { get; }
-    public bool Hovering { get; }
-
-    private void Start()
-    {
-        
-    }
 
 
-    public void Select()
+    public override bool Selected { get; set; }
+    public override bool Hovering { get; set; }
+
+    public override void Select()
     {
-        ShowMenu();
+        throw new NotImplementedException();
     }
-    public void Deselect()
+
+    public override void Deselect()
     {
-        
+        throw new NotImplementedException();
     }
-    public void HoverEnter()
+
+    public override void HoverEnter()
     {
-        
+        throw new NotImplementedException();
     }
-    public void HoverExit()
+
+    public override void HoverExit()
     {
-        
+        throw new NotImplementedException();
     }
-    private void ShowMenu()
-    {
-        
-    }
-    
-    
 }

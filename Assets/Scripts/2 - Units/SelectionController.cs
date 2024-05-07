@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SelectionController : MonoBehaviour
 {
-    private readonly List<ISelectable> Selection = SelectionList.selection;
+    //private readonly List<T> Selection = SelectionList.selection;
     
     
 }

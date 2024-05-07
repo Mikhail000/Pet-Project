@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 public class CursorLock : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _lockedText = default;
@@ -18,9 +20,9 @@ public class CursorLock : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || GameData.Instance.Input.Provider.PanCamera)
+        if (Keyboard.current.escapeKey.wasPressedThisFrame || GameData.Instance.Input.Provider.PanCamera)
             Cursor.lockState = CursorLockMode.None;
-        else if (Input.GetMouseButtonDown(0) || GameData.Instance.Input.Provider.PanCameraUp)
+        else if (Mouse.current.leftButton.wasPressedThisFrame || GameData.Instance.Input.Provider.PanCameraUp)
             Cursor.lockState = CursorLockMode.Confined;
 
         if (_lockedText)
